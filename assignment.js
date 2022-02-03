@@ -4,19 +4,15 @@ const transactions = require('./simple-transaction-data').data;
 
 // Assignment 1:
 const filterFunction = (data) => {
-    return data.filter((transaction) => {
+    return data.filter(transaction => {
         // TODO
         //  'credit_card_company' is 'VISA'
         //  'transaction_date' is 2015 or later
         //   price is 50 or above
         const yearTwentyFifteen = new Date(2015, 01);
-        if (
-            transaction.credit_card_company == 'VISA' &&
+        return transaction.credit_card_company == 'VISA' &&
             transaction.price >= 50 &&
             new Date(transaction.transaction_date) >= yearTwentyFifteen
-        ){
-            return transaction;
-        }
     });
 }
 
